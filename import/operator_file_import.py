@@ -31,8 +31,9 @@ def grouper(iterable, n, fillvalue=0):
 def objectify(model, m):
     mesh = model['meshes'][m['mesh']]
     indices = mesh['indices']
+    vert_index = mesh['vertices']
 
-    m_data = model['vertices'][0]
+    m_data = model['vertices'][vert_index]
     all_vertices = m_data['position']['data']
     verts = [i for i in grouper(all_vertices, 3)]
     edges = []
